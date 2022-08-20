@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prevent browser close tab</title>
+    </head>
+    <body>
+        <div id="desc">Just leave this tab open and your browser won't be closed automatically</div>
+        <p id="new-note"><strong>NOTE: Due to a change in the API of Chrome, you will need to click anywhere on this page once to make this script work. You can click <a href="javascript:void()">here</a> if you want to.</strong></p>
+        <script>
+          window.onbeforeunload = function() { return "Would you really like to close your browser?"; }
+        </script>
+    </body>
+</html>
