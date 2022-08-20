@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
 
     <title>Prevent browser close tab</title>
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png" />
 
     <style>
       body {
@@ -145,9 +145,9 @@
     </div>
 
     <script>
-      // window.onbeforeunload = function () {
-      //   return "Would you really like to close your browser?";
-      // };
+      window.onbeforeunload = function () {
+        return "Would you really like to close your browser?";
+      };
 
       const bodyClassList = document.body.classList;
       const darkModeClassName = "dark-mode";
