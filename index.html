@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <title>Prevent browser close tab</title>
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+
     <style>
       body {
         padding: 0;
@@ -95,26 +97,28 @@
         -webkit-transition: 0.4s;
         transition: 0.4s;
         box-shadow: 0 0px 15px #2020203d;
-        background: white url("https://i.ibb.co/FxzBYR9/night.png");
+        background: white url("./images/dark_mode.png");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: 20px 20px;
       }
 
       input:checked + .slider {
-        background-color: #2196f3;
+        background-color: #e91e63;
       }
 
       input:focus + .slider {
-        box-shadow: 0 0 1px #2196f3;
+        box-shadow: 0 0 1px #e91e63;
       }
 
       input:checked + .slider:before {
         -webkit-transform: translateX(24px);
         -ms-transform: translateX(24px);
         transform: translateX(24px);
-        background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+        background: white url("./images/light_mode.png");
         background-repeat: no-repeat;
         background-position: center;
+        background-size: 20px 20px;
       }
 
       /* Rounded sliders */
@@ -141,9 +145,9 @@
     </div>
 
     <script>
-      window.onbeforeunload = function () {
-        return "Would you really like to close your browser?";
-      };
+      // window.onbeforeunload = function () {
+      //   return "Would you really like to close your browser?";
+      // };
 
       const bodyClassList = document.body.classList;
       const darkModeClassName = "dark-mode";
