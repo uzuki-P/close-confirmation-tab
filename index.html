@@ -151,29 +151,33 @@
 
       const bodyClassList = document.body.classList;
       const darkModeClassName = "dark-mode";
-      const isSetDarkMode = () => localStorage.getItem("theme") === darkModeClassName;
+    //   const isSetDarkMode = () =>
+    //     localStorage.getItem("theme") === darkModeClassName;
+			let isSetDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
       function setThemeDarkTheme(isDark) {
         document.getElementById("slider").checked = isDark;
+				isSetDarkMode = isDark;
 
         if (isDark) {
-          localStorage.setItem("theme", darkModeClassName);
+        //   localStorage.setItem("theme", darkModeClassName);
           bodyClassList.add(darkModeClassName);
         } else {
-          localStorage.removeItem("theme");
+        //   localStorage.removeItem("theme");
           bodyClassList.remove(darkModeClassName);
         }
       }
 
       function toggleTheme() {
-        setThemeDarkTheme(!isSetDarkMode());
+				isSetDarkMode = !isSetDarkMode;
+        setThemeDarkTheme(isSetDarkMode);
       }
 
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (e) => setThemeDarkTheme(e.matches));
 
-      setThemeDarkTheme(isSetDarkMode());
+      setThemeDarkTheme(isSetDarkMode);
     </script>
   </body>
 </html>
